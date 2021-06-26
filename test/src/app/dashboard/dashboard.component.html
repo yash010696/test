@@ -1,0 +1,33 @@
+<nav>Test</nav>
+<div class="container">
+  <div class="container-fluid">
+    <div class="row align-btn">
+      <!-- <button class="btn btn-secondary" (click)="showFormModal(null)">Add</button> -->
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="data?.length">
+          <tr *ngFor="let val of data;let i = index">
+            <td>{{val.firstName}}</td>
+            <td>{{val.lastName}}</td>
+            <td>{{val.email}}</td>
+            <td>{{val.phone}}</td>
+          </tr>
+        </ng-container>
+        <ng-container *ngIf="!data?.length">
+          <tr>
+            <th colspan="9" class="recordNotFound" scope="row">No record found</th>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
